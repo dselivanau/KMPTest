@@ -4,6 +4,15 @@ kotlin = "2.0.0"
 compose = "1.5.4"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
+kotlinxCoroutinesCore = "1.8.1"
+lifecycleViewmodelCompose = "2.8.0"
+navigationCompose = "2.7.0-alpha07"
+navigationComposeVersion = "2.7.7"
+premo = "<latest_version>"
+premoNavigation = "1.0.0-alpha.15"
+premoSaverJson = "1.0.0-alpha.15"
+premoTest = "<latest_version>"
+premoVersion = "1.0.0-alpha.15"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -13,6 +22,17 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
+me-premo-test = { module = "me.dmdev.premo:premo-test", version.ref = "premoTest" }
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
+premo = { module = "me.dmdev.premo:premo", version.ref = "premo" }
+premo-navigation = { module = "me.dmdev.premo:premo-navigation", version.ref = "premo" }
+premo-navigation-v100alpha15 = { module = "me.dmdev.premo:premo-navigation", version.ref = "premoNavigation" }
+premo-saver-json = { module = "me.dmdev.premo:premo-saver-json", version.ref = "premo" }
+premo-saver-json-v100alpha15 = { module = "me.dmdev.premo:premo-saver-json", version.ref = "premoSaverJson" }
+premo-v100alpha15 = { module = "me.dmdev.premo:premo", version.ref = "premoVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
