@@ -11,22 +11,29 @@ import shared
 
 struct LoginView: View {
     
-    let viewModel: LoginViewModel = LoginViewModel()
+    private let viewModel: LoginViewModel = LoginViewModel()
     
-    @KMPState var login: Binding<String>
-    @KMPState var password: Binding<String>
+    @KMPState var loginState: LoginState
     @KMPState var isLoading: Bool
     
     init() {
-        self._login = KMPState(stateFlow: viewModel.login, default: .constant(""))
-        self._password = KMPState(stateFlow: viewModel.password, default: .constant(""))
+        self._loginState = KMPState(stateFlow: viewModel.loginStateFlow, default: LoginState.Companion.shared.EMPTY)
         self._isLoading = KMPState(stateFlow: viewModel.isLoading, default: false)
     }
     
     var body: some View {
         VStack {
-            TextField("Login", text: login)
-            TextField("Password", text: password)
+            TextField("Login", text: .init(get: {
+                loginState.login
+            }, set: { value in
+                viewModel.onUpdateLogin(value: value)
+            }))
+            
+            TextField("Password", text: .init(get: {
+                loginState.password
+            }, set: { value in
+                viewModel.onUpdatePassword(value: value)
+            }))
             
             ZStack {
                 Button("Login") {

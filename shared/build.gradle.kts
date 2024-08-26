@@ -30,6 +30,9 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            // используй implementation когда хочешь, чтобы зависимый код не было видно за пределами модуля
+            // api - для транзитивных зависимостей
+            // api + export - виден код в получаемом фреймворке для ios
             api(libs.kotlinx.coroutines.core)
 //            implementation(libs.navigation.compose)
 //            implementation(libs.lifecycle.viewmodel.compose)

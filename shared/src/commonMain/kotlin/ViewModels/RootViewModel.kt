@@ -1,4 +1,0 @@
-package ViewModels
-
-class RootViewModel {
-}
