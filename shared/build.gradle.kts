@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -40,7 +42,9 @@ kotlin {
             api(libs.premo.v100alpha15)
             api(libs.premo.navigation.v100alpha15)
             api(libs.premo.saver.json.v100alpha15)
+            implementation(compose.components.resources)
         }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
 //            implementation(libs.me.premo.test)
@@ -58,4 +62,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.12"
+    }
 }
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "me.sample.library.resources"
+    generateResClass = always
+}
+//components {
+//    publicResClass = true
+//    packageOfResClass = "me.sample.library.resources"
+//    generateResClass = always
+//}
