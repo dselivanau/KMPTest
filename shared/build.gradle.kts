@@ -42,7 +42,11 @@ kotlin {
             api(libs.premo.v100alpha15)
             api(libs.premo.navigation.v100alpha15)
             api(libs.premo.saver.json.v100alpha15)
-            implementation(compose.components.resources)
+            api(compose.components.resources)
+        }
+
+        androidMain.dependencies {
+            implementation(libs.androidx.runtime)
         }
 
         commonTest.dependencies {
@@ -62,9 +66,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.12"
-    }
 }
 
 compose.resources {
@@ -72,8 +73,3 @@ compose.resources {
     packageOfResClass = "me.sample.library.resources"
     generateResClass = always
 }
-//components {
-//    publicResClass = true
-//    packageOfResClass = "me.sample.library.resources"
-//    generateResClass = always
-//}

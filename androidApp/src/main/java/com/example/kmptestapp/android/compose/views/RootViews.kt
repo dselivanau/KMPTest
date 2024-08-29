@@ -18,14 +18,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import me.sample.library.resources.Res
+import me.sample.library.resources.root_background
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.Image
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.painterResource
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun RootScreen() {
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
-//        Image(painter = Res.drawable.root_background, contentDescription = "asd")
-//        Image(painter = painterResource(id = ), contentDescription = "Image resource")
+        Image(modifier = Modifier.fillMaxWidth().fillMaxHeight(), painter = painterResource(resource = Res.drawable.root_background), contentDescription = "Image test")
         Column(
             modifier = Modifier
                 .fillMaxSize()
